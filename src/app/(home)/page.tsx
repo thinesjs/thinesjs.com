@@ -16,7 +16,7 @@ import {
 import SectionBadge from "@/components/ui/section-badge";
 import { aboutMe, projects } from "@/constants";
 import { cn } from "@/lib/utils";
-import { ArrowRight, ChevronRight, Zap } from "lucide-react";
+import { ArrowRight, ChevronRight, ExternalLink, Zap } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -72,7 +72,7 @@ const Home = () => {
               A little about me...
             </h2>
             <p className="text-muted-foreground mt-6">
-              Turning Passion into Innovation
+              Turning Passion into Innovation 🚀
             </p>
           </div>
         </Container>
@@ -111,7 +111,7 @@ const Home = () => {
               What I&apos;ve been up to...
             </h2>
             <p className="text-muted-foreground mt-6">
-              I mostly work on web and mobile development and below are some of the projects I&apos;am actively working on.
+              I mostly work on web and mobile development and below are some of the projects I&apos;am actively working on. 💻
             </p>
           </div>
         </Container>
@@ -121,7 +121,7 @@ const Home = () => {
               <div className="flex flex-col h-full" key={card.title}>
                 <div className="relative flex items-center w-full h-full">
                   <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[6rem] opacity-50"></div>
-                  <div className="m-2 rounded-xl p-4 ring-1 ring-inset ring-foreground/10 lg:rounded-2xl bg-background/70 backdrop-blur-sm flex flex-col h-full w-full">
+                  <div className="m-2 rounded-xl p-5 ring-1 ring-inset ring-foreground/10 lg:rounded-2xl bg-background/70 backdrop-blur-sm flex flex-col h-full w-full">
                     <div className="flex-grow flex flex-col items-center space-y-4">
                       <div className="relative">
                         <Image
@@ -150,17 +150,35 @@ const Home = () => {
                         ))}
                       </CardContent>
                     </div>
-                    <CardFooter className="">
-                      <Link
-                        href={card.hrefUrl}
-                        className={cn(
-                          "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium",
-                          card.title !== "Unlimited Saas" &&
-                            "!bg-foreground/90 !text-background hover:bg-foreground/80 transition-colors"
-                        )}
-                      >
-                        {card.buttonText}
-                      </Link>
+                    <CardFooter className="p-0">
+                      {card.hrefUrl === '#' ? (
+                        <button
+                          disabled
+                          className={cn(
+                            "w-full text-center text-primary-foreground bg-secondary p-2 rounded-md text-sm font-medium flex items-center justify-center",
+                            "transition-all duration-200 ease-in-out",
+                            "opacity-50 cursor-not-allowed"
+                          )}
+                        >
+                          {card.buttonText}
+                        </button>
+                      ) : (
+                        <Link
+                          href={card.hrefUrl}
+                          target="_blank"
+                          className={cn(
+                            "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium flex items-center justify-center",
+                            "transition-all duration-200 ease-in-out",
+                            "hover:bg-primary-dark hover:shadow-md",
+                            "active:transform active:scale-95",
+                            card.title !== "Unlimited Saas" &&
+                              "!bg-foreground/90 !text-background hover:bg-foreground/80 active:bg-foreground/70"
+                          )}
+                        >
+                          {card.buttonText}
+                          <ExternalLink className="ml-2 w-4 h-4" />
+                        </Link>
+                      )}
                     </CardFooter>
                   </div>
                 </div>
@@ -175,36 +193,26 @@ const Home = () => {
         <div className="hidden md:block absolute top-0 -right-1/3 w-72 h-72 bg-blue-500 rounded-full blur-[10rem] -z-10"></div>
         <Container>
           <div className="max-w-md mx-auto text-start md:text-center">
-            <SectionBadge title="Contact Me" />
+            <SectionBadge title="Let's Work Together!" />
             <h2 className="text-3xl lg:text-4xl font-semibold mt-6">
               Let&apos;s connect!
             </h2>
             <p className="text-muted-foreground mt-6">
               Embark on this journey with me as we learn, grow, and create
-              together. Let&apos;s connect and craft something extraordinary!
+              together. Let&apos;s connect and craft something extraordinary! 🚀
+            </p>
+            <p className="text-muted-foreground mt-6">
+              You can find me on <Link href="https://www.linkedin.com/in/thines-jai-shankar-5780bb234" target="_blank" className="text-primary underline">LinkedIn</Link> or <Link href="https://github.com/thinesjs" target="_blank" className="text-primary underline">GitHub</Link>.
             </p>
           </div>
         </Container>
-        <Container>
+        {/* <Container>
           <div className="flex flex-col items-center justify-center py-10 md:py-20 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8">
-              {/* {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex flex-col items-start lg:items-start px-0 md:px-0"
-                >
-                  <div className="flex items-center justify-center">
-                    <feature.icon className="w-8 h-8" />
-                  </div>
-                  <h3 className="text-lg font-medium mt-4">{feature.title}</h3>
-                  <p className="text-muted-foreground mt-2 text-start lg:text-start">
-                    {feature.info}
-                  </p>
-                </div>
-              ))} */}
+
             </div>
           </div>
-        </Container>
+        </Container> */}
       </Wrapper>
     </section>
   );

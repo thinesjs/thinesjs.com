@@ -38,7 +38,7 @@ export const projects = [
         imageUrl: "https://lh3.googleusercontent.com/k4egvegfj6pt_Fec3WqZjaG5nA15f5Ytcj3Zcd6XHLO9p1cU-94XUL7zZXAGAuRNZg=w240-h480",
         description: "ValorTracker is a discontinued application to view your Valorant's match history, daily store rewards and much more on the move without opening the game.",
         price: "Free",
-        buttonText: "Archived on ApkPure",
+        buttonText: "View on ApkPure",
         hrefUrl: "https://apkpure.com/valortracker/com.thinesjs.valortracker",
         features: [
             "View Daily Store Items and Nightmarket Items and Discounts!",
