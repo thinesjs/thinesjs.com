@@ -57,7 +57,7 @@ export const projects = [
         features: [
             "Connect to Minecraft servers from your mobile device",
             "User-friendly interface for easy server navigation",
-            "Early access to upcoming features"
+            "Link your Microsoft accounts and join premium servers"
         ],
         priceId: "",
     },
