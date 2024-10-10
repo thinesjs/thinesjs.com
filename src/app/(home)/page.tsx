@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import SectionBadge from "@/components/ui/section-badge";
-import { aboutMe } from "@/constants";
+import { aboutMe, projects } from "@/constants";
 import { cn } from "@/lib/utils";
 import { ArrowRight, ChevronRight, Zap } from "lucide-react";
 import Image from "next/image";
@@ -98,7 +98,7 @@ const Home = () => {
         </Container>
       </Wrapper>
 
-      {/* <Wrapper
+      <Wrapper
         id="projects-section"
         className="flex flex-col items-center justify-center py-12 relative"
       >
@@ -111,8 +111,7 @@ const Home = () => {
               What I&apos;ve been up to...
             </h2>
             <p className="text-muted-foreground mt-6">
-              I mostly work on web and mobile applications, but i am open to
-              venture other interesting areas as well
+              I mostly work on web and mobile development and below are some of the projects I&apos;am actively working on.
             </p>
           </div>
         </Container>
@@ -121,40 +120,43 @@ const Home = () => {
             {projects.map((card) => (
               <div className="flex flex-col h-full" key={card.title}>
                 <div className="relative flex items-center w-full h-full">
-                  <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[10rem]"></div>
-                  <div className="m-2 rounded-xl p-4 ring-1 ring-inset ring-foreground/20 lg:-m-4 lg:rounded-2xl bg-opacity-50 backdrop-blur-0.5xl flex flex-col justify-between h-full w-full">
-                    <div className="flex flex-col items-center space-y-4">
+                  <div className="absolute top-1/2 left-1/2 -z-10 gradient w-3/4 -translate-x-1/2 h-3/4 -translate-y-1/2 inset-0 blur-[6rem] opacity-50"></div>
+                  <div className="m-2 rounded-xl p-4 ring-1 ring-inset ring-foreground/10 lg:rounded-2xl bg-background/70 backdrop-blur-sm flex flex-col h-full w-full">
+                    <div className="flex-grow flex flex-col items-center space-y-4">
                       <div className="relative">
                         <Image
-                          src="https://play-lh.googleusercontent.com/LZuE3Z3JgJKa74V4WJdXItELhIPKAhz9s2jMZMw5Pr-hnqKqPzwScUyhFmC2kL-5pLm9=w240-h480"
+                          src={card.imageUrl}
                           alt={`icon`}
                           width={80}
                           height={80}
-                          className="rounded-lg shadow-lg"
+                          className="rounded-lg shadow-md"
                         />
                       </div>
                       <h3 className="text-center text-lg font-semibold">
                         {card.title}
                       </h3>
+                      <p className="text-center text-sm text-muted-foreground">
+                        {card.description}
+                      </p>
                       <CardContent className="space-y-3">
                         {card.features.map((feature) => (
                           <div
                             key={feature}
                             className="flex items-center gap-2"
                           >
-                            <Zap className="w-4 h-4 fill-primary text-primary" />
-                            <p>{feature}</p>
+                            <Zap className="w-4 h-4 flex-shrink-0 fill-primary text-primary" />
+                            <p className="text-sm">{feature}</p>
                           </div>
                         ))}
                       </CardContent>
                     </div>
-                    <CardFooter className="m-5">
+                    <CardFooter className="">
                       <Link
-                        href="#"
+                        href={card.hrefUrl}
                         className={cn(
                           "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium",
                           card.title !== "Unlimited Saas" &&
-                            "!bg-foreground !text-background"
+                            "!bg-foreground/90 !text-background hover:bg-foreground/80 transition-colors"
                         )}
                       >
                         {card.buttonText}
@@ -167,7 +169,7 @@ const Home = () => {
           </div>
         </Container>
        
-      </Wrapper> */}
+      </Wrapper>
 
       <Wrapper className="flex flex-col items-center justify-center py-12 relative">
         <div className="hidden md:block absolute top-0 -right-1/3 w-72 h-72 bg-blue-500 rounded-full blur-[10rem] -z-10"></div>
@@ -179,7 +181,7 @@ const Home = () => {
             </h2>
             <p className="text-muted-foreground mt-6">
               Embark on this journey with me as we learn, grow, and create
-              together. Let’s connect and craft something extraordinary!
+              together. Let&apos;s connect and craft something extraordinary!
             </p>
           </div>
         </Container>
