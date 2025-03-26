@@ -150,35 +150,39 @@ const Home = () => {
                         ))}
                       </CardContent>
                     </div>
-                    <CardFooter className="p-0">
-                      {card.hrefUrl === '#' ? (
-                        <button
-                          disabled
-                          className={cn(
-                            "w-full text-center text-primary-foreground bg-secondary p-2 rounded-md text-sm font-medium flex items-center justify-center",
-                            "transition-all duration-200 ease-in-out",
-                            "opacity-50 cursor-not-allowed"
-                          )}
-                        >
-                          {card.buttonText}
-                        </button>
-                      ) : (
-                        <Link
-                          href={card.hrefUrl}
-                          target="_blank"
-                          className={cn(
-                            "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium flex items-center justify-center",
-                            "transition-all duration-200 ease-in-out",
-                            "hover:bg-primary-dark hover:shadow-md",
-                            "active:transform active:scale-95",
-                            card.title !== "Unlimited Saas" &&
-                              "!bg-foreground/90 !text-background hover:bg-foreground/80 active:bg-foreground/70"
-                          )}
-                        >
-                          {card.buttonText}
-                          <ExternalLink className="ml-2 w-4 h-4" />
-                        </Link>
-                      )}
+                    <CardFooter className="p-0 flex flex-col gap-2">
+                      {card.buttons.map((button, index) => (
+                        button.hrefUrl === '' ? (
+                          <button
+                            key={index}
+                            disabled
+                            className={cn(
+                              "w-full text-center text-primary-foreground bg-secondary p-2 rounded-md text-sm font-medium flex items-center justify-center",
+                              "transition-all duration-200 ease-in-out",
+                              "opacity-50 cursor-not-allowed"
+                            )}
+                          >
+                            {button.buttonText}
+                          </button>
+                        ) : (
+                          <Link
+                            key={index}
+                            href={button.hrefUrl}
+                            target="_blank"
+                            className={cn(
+                              "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium flex items-center justify-center",
+                              "transition-all duration-200 ease-in-out",
+                              "hover:bg-primary-dark hover:shadow-md",
+                              "active:transform active:scale-95",
+                              card.title !== "Unlimited Saas" &&
+                                "!bg-foreground/90 !text-background hover:bg-foreground/80 active:bg-foreground/70"
+                            )}
+                          >
+                            {button.buttonText}
+                            <ExternalLink className="ml-2 w-4 h-4" />
+                          </Link>
+                        )
+                      ))}
                     </CardFooter>
                   </div>
                 </div>

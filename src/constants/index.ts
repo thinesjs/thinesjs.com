@@ -20,45 +20,70 @@ export const aboutMe = [
 
 export const projects = [
     {
-        title: "myPlate",
-        imageUrl: "https://play-lh.googleusercontent.com/LZuE3Z3JgJKa74V4WJdXItELhIPKAhz9s2jMZMw5Pr-hnqKqPzwScUyhFmC2kL-5pLm9=w240-h480",
-        description: "Stay updated with the latest Malaysian vehicle registration plates. Available on Google Play Store since 14th November 2022 and has been downloaded over 1,000 times.",
-        price: "Free",
-        buttonText: "View on Google Play",
-        hrefUrl: "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
-        features: [
-            "Real-time updates on latest plate numbers",
-            "Select by state functionality for specific plates",
-            "User-friendly interface for easy navigation"
-        ],
-        priceId: "",
-    },
-    {
         title: "ValorTracker",
-        imageUrl: "https://lh3.googleusercontent.com/k4egvegfj6pt_Fec3WqZjaG5nA15f5Ytcj3Zcd6XHLO9p1cU-94XUL7zZXAGAuRNZg=w240-h480",
-        description: "ValorTracker is a discontinued application to view your Valorant's match history, daily store rewards and much more on the move without opening the game.",
+        imageUrl:
+            "https://lh3.googleusercontent.com/k4egvegfj6pt_Fec3WqZjaG5nA15f5Ytcj3Zcd6XHLO9p1cU-94XUL7zZXAGAuRNZg=w240-h480",
+        description:
+            "ValorTracker is a discontinued application to view your Valorant's match history, daily store rewards and much more on the move without opening the game.",
         price: "Free",
-        buttonText: "View on ApkPure",
-        hrefUrl: "https://apkpure.com/valortracker/com.thinesjs.valortracker",
+        buttons: [
+            {
+                buttonText: "View on ApkPure",
+                hrefUrl:
+                    "https://apkpure.com/valortracker/com.thinesjs.valortracker",
+            },
+        ],
         features: [
             "View Daily Store Items and Nightmarket Items and Discounts!",
             "Preview crosshair codes",
-            "View your account level, xp and much more!"
+            "View your account level, xp and much more!",
         ],
         priceId: "",
     },
     {
-        title: "MineConnect",
-        imageUrl: "https://files.scottshar.es/Share%20Sheets/app-icons/Placeholder-Icon.png",
-        description: "A mobile application that allows users to connect to Minecraft servers through their phone. Currently in early stage development.",
+        title: "myPlate",
+        imageUrl:
+            "https://play-lh.googleusercontent.com/CKD9dM3-3P1nb9SrMNX88HT66O_2iUEgL7xqiDZpefceBoYoaaEXvMs4HW43Sx_kHhk=w240-h480",
+        description:
+            "Stay updated with the latest Malaysian vehicle registration plates. Available on Google Play Store since 14th November 2022 and Apple App Store and has been downloaded over 5,000 times.",
         price: "Free",
-        buttonText: "Coming Soon",
-        hrefUrl: "#",
+        buttons: [
+            {
+                buttonText: "View on App Store",
+                hrefUrl:
+                    "https://apps.apple.com/us/app/myplate-malaysia-car-plates/id6741453266",
+            },
+            {
+                buttonText: "Google Play Store",
+                hrefUrl:
+                    "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
+            },
+        ],
         features: [
-            "Connect to Minecraft servers from your mobile device",
-            "User-friendly interface for easy server navigation",
-            "Link your Microsoft accounts and join premium servers"
+            "Real-time updates on latest plate numbers",
+            "Select by state functionality for specific plates",
+            "User-friendly interface for easy navigation",
         ],
         priceId: "",
     },
-]
+    {
+        title: "myTransit",
+        imageUrl:
+            "https://files.scottshar.es/Share%20Sheets/app-icons/Placeholder-Icon.png",
+        description:
+            "A mobile application that allows malaysians to check the latest public transportation schedules and routes.",
+        price: "Free",
+        buttons: [
+            {
+                buttonText: "Coming Soon",
+                hrefUrl: "",
+            },
+        ],
+        features: [
+            "Real-time updates on latest public transportation schedules",
+            "User-friendly interface for easy navigation",
+            "Check the latest public transportation routes",
+        ],
+        priceId: "",
+    },
+];
