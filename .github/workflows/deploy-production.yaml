@@ -24,6 +24,9 @@ jobs:
     - name: Install dependencies
       run: |
         yarn install --frozen-lockfile
+    - name: Build environment
+      run: |
+        yarn build
     - name: Deploy to S3
       uses: reggionick/s3-deploy@v4
       with:
