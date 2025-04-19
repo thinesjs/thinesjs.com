@@ -13,6 +13,7 @@
 /.next/
 /out/
 /build/
+/remoteImagesForOptimization/
 
 # production
 /build
@@ -35,5 +36,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# others
 .env
 seed.js
+/public/asset-images
+/public/assets/asset-images
+/public/next-image-export-optimizer-hashes.json
