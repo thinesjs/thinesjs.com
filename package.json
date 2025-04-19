@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "commit-and-tag-version",
+    "release:stg": "commit-and-tag-version --tag-prefix=staging-v",
+    "release:prod": "git checkout master && commit-and-tag-version --tag-prefix=release-v"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",
