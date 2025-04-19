@@ -1,5 +1,6 @@
 import Container from "@/components/global/container";
 import Wrapper from "@/components/global/wrapper";
+import { BorderBeam } from "@/components/magicui/border-beam";
 import ScrollToProjects from "@/components/scroll-to-projects";
 import { CardContent, CardFooter } from "@/components/ui/card";
 import SectionBadge from "@/components/ui/section-badge";
@@ -30,7 +31,12 @@ const Home = () => {
                                         className="rounded-md lg:rounded-xl bg-foreground/10 shadow-2xl ring-1 ring-border"
                                     />
 
-                                    {/* <BorderBeam size={250} duration={5} delay={9} /> */}
+                                    <BorderBeam
+                                        size={250}
+                                        duration={10}
+                                        delay={9}
+                                        borderWidth={0.5}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -104,14 +110,19 @@ const Home = () => {
                             What I&apos;ve been up to...
                         </h2>
                         <p className="text-muted-foreground mt-6">
-                            I mostly work on web and mobile development and
-                            below are some of the projects I&apos;am actively
-                            working on. 💻
+                            I believe creativity often starts with a silly idea.
+                            As my GitHub bio says:{" "}
+                            <i>
+                                &quot;I come up with silly problems and make
+                                silly solutions for them.&quot;{" "}
+                            </i>
+                            Take a look below to see some of the fun projects
+                            I&apos;ve built around this idea! 💻
                         </p>
                     </div>
                 </Container>
                 <Container className="flex items-center justify-center">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full md:gap-8 py-10 md:py-20 flex-wrap">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 w-full md:gap-8 py-10 md:py-20 flex-wrap justify-center">
                         {projects.map((card) => (
                             <div
                                 className="flex flex-col h-full"
@@ -199,7 +210,7 @@ const Home = () => {
                 <div className="hidden md:block absolute top-0 -right-1/3 w-72 h-72 bg-blue-500 rounded-full blur-[10rem] -z-10"></div>
                 <Container>
                     <div className="max-w-md mx-auto text-start md:text-center">
-                        <SectionBadge title="Let's Work Together!" />
+                        <SectionBadge title="Let's work together!" />
                         <h2 className="text-3xl lg:text-4xl font-semibold mt-6">
                             Let&apos;s connect!
                         </h2>

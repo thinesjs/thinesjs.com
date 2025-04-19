@@ -66,24 +66,19 @@ export const projects = [
         ],
         priceId: "",
     },
-    {
-        title: "myTransit",
-        imageUrl:
-            "https://files.scottshar.es/Share%20Sheets/app-icons/Placeholder-Icon.png",
-        description:
-            "A mobile application that allows malaysians to check the latest public transportation schedules and routes.",
-        price: "Free",
-        buttons: [
-            {
-                buttonText: "Coming Soon",
-                hrefUrl: "",
-            },
-        ],
-        features: [
-            "Real-time updates on latest public transportation schedules",
-            "User-friendly interface for easy navigation",
-            "Check the latest public transportation routes",
-        ],
-        priceId: "",
-    },
+    // {
+    //     title: "",
+    //     imageUrl:
+    //         "https://files.scottshar.es/Share%20Sheets/app-icons/Placeholder-Icon.png",
+    //     description: "",
+    //     price: "Free",
+    //     buttons: [
+    //         {
+    //             buttonText: "",
+    //             hrefUrl: "",
+    //         },
+    //     ],
+    //     features: [""],
+    //     priceId: "",
+    // },
 ];
