@@ -44,7 +44,7 @@ jobs:
         aws-region: ap-southeast-5
     - name: Deploy to S3
       run: |
-        aws s3 sync .next/build s3://${{ secrets.S3_BUCKET }}/_next/build --delete
+        aws s3 sync /build s3://${{ secrets.S3_BUCKET }}/build --delete
         aws s3 sync public s3:// ${{ secrets.S3_BUCKET }} --delete
     - name: Invalidate CloudFront
       run: |
