@@ -1,5 +1,0 @@
-module.exports = [
-    "https://media-hosting.imagekit.io/7f5473a93ccf4468/unnamed.jpg?Expires=1839686704&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=klMhgMy-jf5qKX~yqKXt8v7~G2GI1c5ootBB8JwR~h0QOncC6o5i51ud1ULUJ5hVRoQlWJK-h8rm04WtIGQcZ630vBKqS7wgzlzHXBuZBv3ufAeaULKozTntrBndMb-Sz192aGBfz8OT8-coO59KXibEyFjj~xWUSLWlXUeYaatNz-wBy50zCo6U8wZBfGgRDaf3d8krM1OUeKPBN7iWPp9iUPEmTyOdtpNWCCcqYSEo4mq7jBKDUYnFw4AWjccTuU4lAf9rnY~Ms09czzEPlISUHR38PwsXFg9DnV28dgr~vWlQMAx1-IMPFSG0qQ-U2J4lKl3shK3YTCidZ9CKkw__",
-    "https://media-hosting.imagekit.io/596f77154f8c4c38/unnamed.png?Expires=1839686704&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eA2YaB1TbCW34xLNVi6SJmrea4PIXhGogynRsf8ZzBBSAwKV0oI-~I46xRay7OYXPGgeF5Mwc-nKlfgCYU6akVST-OcolD8KnJBgjOnt4OM2IEfQO3JFuZQk3NbwRYq~HnZEJ7-2sj7r8YfvIqdrZENrU0igsTm94MCqLdaUDenHnU9vhlJkiJ9BJ6KYCj6RuHXDqL6uko0EyHRaqaPBwKGXul8tLfN4vywiXpyEi0X4t61RbogD~RWrdlPgg2J5je~RMp5FTMQIExIU~HP68F0nTaSISStTJVl4H8J~aIpWhq4mFFqs-4IRV~2s7axPbBYKTDjMquIax47J~d2Ykg__",
-    "https://files.scottshar.es/Share%20Sheets/app-icons/Placeholder-Icon.png",
-];
