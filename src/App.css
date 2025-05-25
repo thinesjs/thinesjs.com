@@ -1,0 +1,112 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+/* Custom background styles */
+.app-container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden; /* Prevent scrollbars from radial gradient */
+    background: linear-gradient(
+        to bottom,
+        #0a2a38,
+        #000000
+    ); /* Dark teal/blue to black */
+    color: #ffffff; /* Assuming foreground should be white on dark bg */
+    padding: 2rem; /* Keep padding similar to original */
+}
+
+@media (min-width: 768px) {
+    /* md breakpoint */
+    .app-container {
+        padding: 4rem; /* Keep padding similar to original */
+    }
+}
+
+.app-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%; /* Wider than container */
+    height: 70vh; /* Adjust height as needed */
+    background: radial-gradient(
+        circle at top center,
+        rgba(100, 200, 255, 0.15) 0%,
+        transparent 70%
+    ); /* Light blueish glow */
+    pointer-events: none; /* Make sure it doesn't interfere with clicks */
+    z-index: 0;
+}
+
+.content-wrapper {
+    position: relative; /* Ensure content is above the pseudo-element */
+    z-index: 1;
+}
+
+/* Emil Kowalski inspired styles */
+button {
+    border-radius: 0.75rem !important;
+}
+
+input {
+    border-radius: 0.75rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+p {
+    line-height: 1.6;
+}
