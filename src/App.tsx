@@ -42,12 +42,10 @@ function App() {
                     <p className="text-muted-foreground leading-relaxed">
                         It all started with a curiousity. My early days were
                         deploying a website meant dragging files into an FTP
-                        window{" "}
-                        <span className="italic">(the good old 'zilla)</span>{" "}
-                        and waiting — hoping everything would upload without
-                        breaking. I hadn't discovered Git yet, but the thrill of
-                        seeing something I built go live was more than enough to
-                        keep me hooked.
+                        window and waiting — hoping everything would upload
+                        without breaking, sometimes waiting for hours. The
+                        thrill of seeing something I built go live was.. oh,
+                        it's out there!
                     </p>
                 </section>
 
