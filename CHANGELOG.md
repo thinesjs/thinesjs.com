@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.3](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.2...release-v0.2.3) (2025-06-26)
+
+
+### Bug Fixes
+
+* fixed flickering fonts & update copywriting ([286fb17](https://github.com/thinesjs/thinesjs.com/commit/286fb17e0538f2049340a555767f7277dfdcba53))
+
 ## [0.2.2](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.1...release-v0.2.2) (2025-06-13)
 
 ## [0.2.1](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.0...release-v0.2.1) (2025-05-25)
