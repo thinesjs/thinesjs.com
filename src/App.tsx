@@ -33,7 +33,7 @@ function App() {
                 <header className="space-y-1">
                     <h1 className="text-2xl font-medium">thines jai shankar</h1>
                     <p className="text-muted-foreground">
-                        turning passion into innovation 🚀
+                        just imagine there is some inspirational quote here 🚀
                     </p>
                 </header>
 
@@ -43,20 +43,18 @@ function App() {
                         It all started with a curiousity. My early days were
                         deploying a website meant dragging files into an FTP
                         window and waiting — hoping everything would upload
-                        without breaking, sometimes waiting for hours. The
-                        thrill of seeing something I built go live was.. oh,
-                        it's out there!
+                        without breaking, sometimes waiting for hours.
                     </p>
                 </section>
 
                 <section className="space-y-8">
                     <h2 className="text-xl font-medium">In the present</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        Over time, what started as a hobby turned into a career.
-                        Explored different web technologies, tinkered with
-                        design, and eventually stepped into the world of mobile
-                        development too. Every project — no matter how small —
-                        is a step towards mastery.
+                        Over time, what started as a hobby turned into something
+                        i'd do everyday and now it's a career! Every projects
+                        i create, although most of it don't make it out into a
+                        complete project but that's the fun of it, its a step
+                        towards mastery!
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
                         The excitement of building something from scratch still
@@ -97,7 +95,9 @@ function App() {
                             </h3>
                             <p className="text-muted-foreground">
                                 An application to keep track of latest vehicle
-                                registration numbers for Malaysians.
+                                registration numbers for Malaysians. Available for
+                                iOS and Android through the App Store and Google
+                                Play Store.
                             </p>
                             <Button
                                 variant="link"
@@ -110,7 +110,20 @@ function App() {
                                 }
                             >
                                 <ArrowUpRightIcon className="mr-2 h-4 w-4" />{" "}
-                                Check out myPlate
+                                Get myPlate for iOS
+                            </Button>
+                            <Button
+                                variant="link"
+                                className="px-0 text-blue-500 hover:text-blue-400"
+                                onClick={() =>
+                                    window.open(
+                                        "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
+                                        "_blank"
+                                    )
+                                }
+                            >
+                                <ArrowUpRightIcon className="mr-2 h-4 w-4" />{" "}
+                                Get myPlate for Android
                             </Button>
                         </div>
                     </div>
@@ -169,23 +182,6 @@ function App() {
                     </div>
                 </section>
 
-                {/* <section className="space-y-8">
-                    <h2 className="text-xl font-medium">Newsletter</h2>
-                    <p className="text-muted-foreground">
-                        Exclusive updates on my projects. No spam, promise.
-                    </p>
-                    <div className="flex gap-2 items-center">
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            className="bg-background border rounded-lg px-4 py-2 flex-1 text-sm"
-                        />
-                        <Button variant="outline" className="rounded-lg">
-                            Subscribe
-                        </Button>
-                    </div>
-                </section> */}
-
                 <section className="space-y-8">
                     <h2 className="text-xl font-medium">The road ahead</h2>
                     <p className="text-muted-foreground">
@@ -229,7 +225,7 @@ function App() {
                         <DialogTitle>{dialogTitle}</DialogTitle>
                         <DialogDescription>
                             For any questions or concerns, please contact me via
-                            email at support at thinesjs.com (replace at with @)
+                            email at thinesweb @ gmail dot com.
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
