@@ -2,12 +2,12 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-
-// Add dark class to html element directly
-document.documentElement.classList.add("dark");
+import { ThemeProvider } from "./components/theme-provider.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <App />
+        <ThemeProvider defaultTheme="dark" storageKey="app-ui-theme">
+            <App />
+        </ThemeProvider>
     </StrictMode>
 );

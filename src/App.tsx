@@ -17,6 +17,7 @@ import {
     DialogTitle,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import { ModeToggle } from "./components/ui/mode-toggle";
 
 function App() {
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -30,11 +31,17 @@ function App() {
     return (
         <div className="min-h-screen bg-background text-foreground p-8 md:p-16">
             <div className="mx-auto max-w-3xl space-y-20">
-                <header className="space-y-1">
-                    <h1 className="text-2xl font-medium">thines jai shankar</h1>
-                    <p className="text-muted-foreground">
-                        just imagine there is some inspirational quote here 🚀
-                    </p>
+                <header className="space-y-1 flex justify-between items-start">
+                    <div>
+                        <h1 className="text-2xl font-medium">
+                            thines jai shankar
+                        </h1>
+                        <p className="text-muted-foreground mt-3">
+                            just imagine there is some inspirational quote here
+                            🚀
+                        </p>
+                    </div>
+                    <ModeToggle />
                 </header>
 
                 <section className="space-y-8">
@@ -51,8 +58,8 @@ function App() {
                     <h2 className="text-xl font-medium">In the present</h2>
                     <p className="text-muted-foreground leading-relaxed">
                         Over time, what started as a hobby turned into something
-                        i'd do everyday and now it's a career! Every projects
-                        i create, although most of it don't make it out into a
+                        i'd do everyday and now it's a career! Every projects i
+                        create, although most of it don't make it out into a
                         complete project but that's the fun of it, its a step
                         towards mastery!
                     </p>
@@ -95,9 +102,9 @@ function App() {
                             </h3>
                             <p className="text-muted-foreground">
                                 An application to keep track of latest vehicle
-                                registration numbers for Malaysians. Available for
-                                iOS and Android through the App Store and Google
-                                Play Store.
+                                registration numbers for Malaysians. Available
+                                for iOS and Android through the App Store and
+                                Google Play Store.
                             </p>
                             <Button
                                 variant="link"
