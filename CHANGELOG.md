@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.4](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.3...release-v0.2.4) (2025-06-26)
+
+
+### Features
+
+* added light theme & theme switcher ([96ca563](https://github.com/thinesjs/thinesjs.com/commit/96ca56386e01b9f5a1061e8502eaace09cef038a))
+
 ## [0.2.3](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.2...release-v0.2.3) (2025-06-26)
 
 
