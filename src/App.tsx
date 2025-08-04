@@ -4,11 +4,10 @@ import {
     BadgeCheck,
     Github,
     Linkedin,
-    ArrowRight,
-    ArrowUpRightIcon,
 } from "lucide-react";
 import "./App.css";
 import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 import {
     Dialog,
     DialogContent,
@@ -45,27 +44,42 @@ function App() {
                 </header>
 
                 <section className="space-y-8">
-                    <h2 className="text-xl font-medium">The journey so far</h2>
+                    <h2 className="text-xl font-medium">
+                        Part of the journey...
+                    </h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        It all started with a curiousity. My early days were
-                        deploying a website meant dragging files into an FTP
-                        window and waiting — hoping everything would upload
-                        without breaking, sometimes waiting for hours.
+                        Wanted to play some games, but buying them? Not an
+                        option. So where do we go? The torrenting sites, of
+                        course. But wait—how does this even work? There were
+                        these massive forums with thousands of people sharing
+                        links. But again—how does that work? Discovered ZenForo,
+                        vBulletin, all powered by the classic PHP. Go back, what
+                        if... we host our{" "}
+                        <a
+                            className="text-blue-500 hover:text-blue-400"
+                            href="https://i.ibb.co/whwMRLmx/Screenshot-2025-08-04-at-10-07-18-PM.png"
+                            target="_blank"
+                        >
+                            own torrent search engine
+                        </a>
+                        . Whats stopping us? Then came 000ᴡebhost, Freeпom
+                        domains and FileZilla. You know what's next.
                     </p>
                 </section>
 
                 <section className="space-y-8">
                     <h2 className="text-xl font-medium">In the present</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        Over time, what started as a hobby turned into something
-                        i'd do everyday and now it's a career! Every projects i
-                        create, although most of it don't make it out into a
-                        complete project but that's the fun of it, its a step
-                        towards mastery!
+                        Minutes gone, hours gone, days gone, months gone, years
+                        gone, but same stuff. One at a time, one step at a time.
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                        The excitement of building something from scratch still
-                        drives me today.
+                        My GitHub bio reads{" "}
+                        <i>
+                            "i come up with a silly problem and make silly
+                            solutions for it"
+                        </i>
+                        . You figure out the rest.
                     </p>
                 </section>
 
@@ -74,65 +88,39 @@ function App() {
                         Some of my works along the way
                     </h2>
                     <div className="space-y-6">
-                        <div className="space-y-1">
-                            <h3 className="font-medium">thinesjs.com</h3>
-                            <p className="text-muted-foreground">
-                                A portfolio website is probably the first for
-                                most software engineers, although I cant relate
-                                but this is also one of my works!
-                            </p>
-                            <Button
-                                variant="link"
-                                className="px-0 text-blue-500 hover:text-blue-400"
-                                disabled={true}
-                                onClick={() =>
-                                    window.open(
-                                        "https://thinesjs.com",
-                                        "_blank"
-                                    )
-                                }
-                            >
-                                <ArrowRight className="mr-2 h-4 w-4" /> You are
-                                here
-                            </Button>
-                        </div>
-                        <div className="space-y-1">
-                            <h3 className="font-medium">
-                                myPlate - Malaysia Car Plates
-                            </h3>
-                            <p className="text-muted-foreground">
-                                An application to keep track of latest vehicle
-                                registration numbers for Malaysians. Available
-                                for iOS and Android through the App Store and
-                                Google Play Store.
-                            </p>
-                            <Button
-                                variant="link"
-                                className="px-0 text-blue-500 hover:text-blue-400"
-                                onClick={() =>
-                                    window.open(
-                                        "https://apps.apple.com/us/app/myplate-malaysia-car-plates/id6741453266",
-                                        "_blank"
-                                    )
-                                }
-                            >
-                                <ArrowUpRightIcon className="mr-2 h-4 w-4" />{" "}
-                                Get myPlate for iOS
-                            </Button>
-                            <Button
-                                variant="link"
-                                className="px-0 text-blue-500 hover:text-blue-400"
-                                onClick={() =>
-                                    window.open(
-                                        "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
-                                        "_blank"
-                                    )
-                                }
-                            >
-                                <ArrowUpRightIcon className="mr-2 h-4 w-4" />{" "}
-                                Get myPlate for Android
-                            </Button>
-                        </div>
+                        {projects.map((project, index) => {
+                            return (
+                                <div key={index} className="space-y-1">
+                                    <h3 className="font-medium">
+                                        {project.title}
+                                    </h3>
+                                    <p className="text-muted-foreground">
+                                        {project.description}
+                                    </p>
+                                    {project.links.map((link, linkIndex) => {
+                                        return (
+                                            <Button
+                                                key={linkIndex}
+                                                variant="link"
+                                                className="px-0 text-blue-500 hover:text-blue-400"
+                                                disabled={link.disabled}
+                                                onClick={() =>
+                                                    link.url && !link.disabled
+                                                        ? window.open(
+                                                              link.url,
+                                                              "_blank"
+                                                          )
+                                                        : undefined
+                                                }
+                                            >
+                                                <link.icon className="mr-2 h-4 w-4" />{" "}
+                                                {link.text}
+                                            </Button>
+                                        );
+                                    })}
+                                </div>
+                            );
+                        })}
                     </div>
                 </section>
 
@@ -232,7 +220,7 @@ function App() {
                         <DialogTitle>{dialogTitle}</DialogTitle>
                         <DialogDescription>
                             For any questions or concerns, please contact me via
-                            email at thinesweb @ gmail dot com.
+                            email at <i>&lt;this_root_domain&gt;</i>@gmail.com.
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
