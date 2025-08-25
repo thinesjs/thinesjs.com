@@ -50,11 +50,11 @@ function App() {
                     <p className="text-muted-foreground leading-relaxed">
                         Wanted to play some games, but buying them? Not an
                         option. So where do we go? The torrenting sites, of
-                        course. But wait—how does this even work? There were
+                        course. But wait - how does this even work? There were
                         these massive forums with thousands of people sharing
-                        links. But again—how does that work? Discovered ZenForo,
-                        vBulletin, all powered by the classic PHP. Go back, what
-                        if... we host our{" "}
+                        links. But again - how does that work? Discovered
+                        ZenForo, vBulletin, all powered by the classic PHP. Go
+                        back, what if... we host our{" "}
                         <a
                             className="text-blue-500 hover:text-blue-400"
                             href="https://i.ibb.co/whwMRLmx/Screenshot-2025-08-04-at-10-07-18-PM.png"
@@ -85,7 +85,7 @@ function App() {
 
                 <section className="space-y-8">
                     <h2 className="text-xl font-medium">
-                        Some of my works along the way
+                        Some of my works for the public along the way
                     </h2>
                     <div className="space-y-6">
                         {projects.map((project, index) => {

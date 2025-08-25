@@ -1,21 +1,9 @@
 import { Project } from "@/interfaces/projects.interface";
-import { ArrowRight, ArrowUpRightIcon } from "lucide-react";
+import { ArrowUpRightIcon } from "lucide-react";
 
 export const projects: Project[] = [
     {
-        title: "thinesjs.com",
-        description: "just imagine there is some inspirational quote here 🚀",
-        links: [
-            {
-                text: "You are here",
-                url: "https://thinesjs.com",
-                icon: ArrowRight,
-                disabled: true,
-            },
-        ],
-    },
-    {
-        title: "myPlate",
+        title: "myPlate - Malaysia Car Plates",
         description:
             "An application to keep track of latest vehicle registration numbers for Malaysians. Available for iOS and Android through the App Store and Google Play Store.",
         links: [
@@ -29,18 +17,23 @@ export const projects: Project[] = [
                 url: "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
                 icon: ArrowUpRightIcon,
             },
+            // {
+            //     text: "Help",
+            //     url: "https://thinesjs.github.io/myplate-docs/",
+            //     icon: ArrowUpRightIcon,
+            // },
         ],
     },
-    // {
-    //     title: "myTransit",
-    //     description:
-    //         "A web application to keep live locations of public transport in Malaysia.",
-    //     links: [
-    //         {
-    //             text: "Visit myTransit",
-    //             url: "https://staging.mytransit.thinesjs.com?ref=thinesjs.com",
-    //             icon: ArrowUpRightIcon,
-    //         },
-    //     ],
-    // },
+    {
+        title: "myTransit (Preview)",
+        description:
+            "An application for public transport in Malaysia, or busrouter.sg for Malaysians. Available for the web.\n\nCurrently in preview, expect bugs and missing features.",
+        links: [
+            {
+                text: "Visit myTransit",
+                url: "https://preview.mytransit.thinesjs.com?ref=thinesjs.com",
+                icon: ArrowUpRightIcon,
+            },
+        ],
+    },
 ];
