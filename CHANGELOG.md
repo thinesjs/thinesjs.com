@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.7](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.6...release-v0.2.7) (2025-09-10)
+
+
+### Features
+
+* added isometrify to projects ([fb501c6](https://github.com/thinesjs/thinesjs.com/commit/fb501c63dc996f1fbb6e088569f5f2bdc1a945ed))
+
 ## [0.2.6](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.5...release-v0.2.6) (2025-08-25)
 
 
