@@ -31,7 +31,19 @@ export const projects: Project[] = [
         links: [
             {
                 text: "Visit myTransit",
-                url: "https://preview.mytransit.thinesjs.com?ref=thinesjs.com",
+                url: "https://preview.mytransit.thinesjs.com",
+                icon: ArrowUpRightIcon,
+            },
+        ],
+    },
+    {
+        title: "Isometrify (Preview)",
+        description:
+            "Generate isometric 3D icons with AI — customize styles, trim backgrounds, and export transparent PNGs. Available for the web.\n\nCurrently in preview, expect bugs and missing features.",
+        links: [
+            {
+                text: "Visit Isometrify",
+                url: "https://preview.isometrify.thinesjs.com",
                 icon: ArrowUpRightIcon,
             },
         ],
