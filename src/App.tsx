@@ -30,56 +30,42 @@ function App() {
     return (
         <div className="min-h-screen bg-background text-foreground p-8 md:p-16">
             <div className="mx-auto max-w-3xl space-y-20">
-                <header className="space-y-1 flex justify-between items-start">
-                    <div>
-                        <h1 className="text-2xl font-medium">
-                            thines jai shankar
-                        </h1>
-                        <p className="text-muted-foreground mt-3">
-                            just imagine there is some inspirational quote here
-                            🚀
-                        </p>
-                    </div>
+                <header className="flex justify-between items-center">
+                    <h1 className="text-2xl font-medium">thines jai shankar</h1>
                     <ModeToggle />
                 </header>
 
                 <section className="space-y-8">
-                    <h2 className="text-xl font-medium">
-                        Part of the journey...
-                    </h2>
+                    <h2 className="text-xl font-medium">Part of the journey</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        Wanted to play some games, but buying them? Not an
-                        option. So where do we go? The torrenting sites, of
-                        course. But wait - how does this even work? There were
-                        these massive forums with thousands of people sharing
-                        links. But again - how does that work? Discovered
-                        ZenForo, vBulletin, all powered by the classic PHP. Go
-                        back, what if... we host our{" "}
+                        Freeпom for domains, FileZilla for drag and drop
+                        deployments and 000ᴡebhost for hosting. Alright now,
+                        where do we start?{" "}
                         <a
                             className="text-blue-500 hover:text-blue-400"
                             href="https://i.ibb.co/whwMRLmx/Screenshot-2025-08-04-at-10-07-18-PM.png"
                             target="_blank"
                         >
-                            own torrent search engine
-                        </a>
-                        . Whats stopping us? Then came 000ᴡebhost, Freeпom
-                        domains and FileZilla. You know what's next.
+                            Ask someone for code?
+                        </a>{" "}
+                        and wait hours for the FTP file transfer to complete.
                     </p>
                 </section>
 
                 <section className="space-y-8">
                     <h2 className="text-xl font-medium">In the present</h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        Minutes gone, hours gone, days gone, months gone, years
-                        gone, but same stuff. One at a time, one step at a time.
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
                         My GitHub bio reads{" "}
-                        <i>
-                            "i come up with a silly problem and make silly
-                            solutions for it"
-                        </i>
-                        . You figure out the rest.
+                        <a
+                            className="text-muted-foreground/70"
+                            href="https://github.com/thinesjs"
+                            target="_blank"
+                        >
+                            i come up with a silly problem and make silly
+                            solutions for it
+                        </a>
+                        . You can figure out the rest and do i have to tell you
+                        the fact that i like monochrome and minimal UI design?
                     </p>
                 </section>
 
@@ -87,6 +73,11 @@ function App() {
                     <h2 className="text-xl font-medium">
                         Some of my works for the public along the way
                     </h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                        Building something and knowing that people uses it for
+                        something, is a good feeling, i can tell you. So, these
+                        below are for you to use to make me feel good.
+                    </p>
                     <div className="space-y-6">
                         {projects.map((project, index) => {
                             return (
@@ -220,7 +211,7 @@ function App() {
                         <DialogTitle>{dialogTitle}</DialogTitle>
                         <DialogDescription>
                             For any questions or concerns, please contact me via
-                            email at <i>&lt;this_root_domain&gt;</i>@gmail.com.
+                            email at hey@thinesjs.com.
                         </DialogDescription>
                     </DialogHeader>
                 </DialogContent>
