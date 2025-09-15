@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.9](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.8...release-v0.2.9) (2025-09-15)
+
+
+### Bug Fixes
+
+* resolve FOUT issue ([d3d9bb1](https://github.com/thinesjs/thinesjs.com/commit/d3d9bb1f0f26bf1e28ae7d36320def3a118ea8ed))
+
 ## [0.2.8](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.7...release-v0.2.8) (2025-09-15)
 
 
