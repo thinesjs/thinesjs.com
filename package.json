@@ -9,13 +9,15 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "release": "commit-and-tag-version",
-    "release:prod": "git checkout master && commit-and-tag-version --tag-prefix=release-v",
+    "release:prod": "commit-and-tag-version --tag-prefix=release-v",
+    "release:dry:prod": "commit-and-tag-version --dry-run --tag-prefix=v",
     "init:prod": "SLS_DEBUG=* sls create-cert --stage production",
     "sls-deploy-production": "sls deploy -s production",
     "deploy-client:production": "sls client deploy --stage production --no-config-change --no-policy-change --no-confirm",
     "deploy": "pnpm build && pnpm deploy-client:prod"
   },
   "dependencies": {
+    "@fontsource-variable/geist": "^5.2.8",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-alert-dialog": "^1.1.6",

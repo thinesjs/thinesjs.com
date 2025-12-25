@@ -1,0 +1,102 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Select version bump type'
+        required: true
+        default: 'automatic'
+        type: choice
+        options:
+          - automatic
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-release
+      cancel-in-progress: false
+
+    outputs:
+      released: ${{ steps.check-release.outputs.released }}
+      version: ${{ steps.extract-version.outputs.version }}
+      tag: ${{ steps.extract-version.outputs.tag }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Cache global node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08
+        with:
+          timeout_minutes: 10
+          max_attempts: 2
+          retry_wait_seconds: 5
+          command: yarn install --frozen-lockfile
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run Release (automatic)
+        if: github.event.inputs.force == 'automatic'
+        run: yarn run release:prod
+
+      - name: Run Release
+        if: github.event.inputs.force != 'automatic'
+        run: yarn run release:prod --release-as ${{ github.event.inputs.force }}
+
+      - name: Check if release was created
+        id: check-release
+        run: |
+          # Check if there are new commits/tags created
+          if git diff --quiet HEAD@{1} HEAD 2>/dev/null; then
+            echo "released=false" >> $GITHUB_OUTPUT
+            echo "No changes to release"
+          else
+            echo "released=true" >> $GITHUB_OUTPUT
+            echo "Release created successfully"
+          fi
+
+      - name: Extract version and tag
+        id: extract-version
+        if: steps.check-release.outputs.released == 'true'
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          TAG="v${VERSION}"
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "tag=${TAG}" >> $GITHUB_OUTPUT
+          echo "Released version: ${VERSION}"
+          echo "Released tag: ${TAG}"
+
+      - name: Push changes and tags
+        if: steps.check-release.outputs.released == 'true'
+        run: |
+          git push --follow-tags origin master
