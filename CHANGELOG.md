@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.12](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.11...release-v0.2.12) (2026-03-15)
+
+
+### Features
+
+* use system font & and change some shit ([b630f80](https://github.com/thinesjs/thinesjs.com/commit/b630f80ff3bd60048d8d94e00cc75efac56134ce))
+
 ## [0.2.11](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.10...release-v0.2.11) (2025-12-25)
 
 
