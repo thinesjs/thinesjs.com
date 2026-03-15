@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@import "@fontsource-variable/geist";
+/* @import "@fontsource-variable/roboto-slab"; */
 
 :root {
     --background: oklch(0.99 0 0);
@@ -39,15 +38,20 @@
     --radius: 0.9rem;
     --shadow-2xs: 0px 1px 50px 0px hsl(0 0% 0% / 0.04);
     --shadow-xs: 0px 1px 50px 0px hsl(0 0% 0% / 0.04);
-    --shadow-sm: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-sm:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 1px 2px -1px hsl(0 0% 0% / 0.07);
-    --shadow: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 1px 2px -1px hsl(0 0% 0% / 0.07);
-    --shadow-md: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-md:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 2px 4px -1px hsl(0 0% 0% / 0.07);
-    --shadow-lg: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-lg:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 4px 6px -1px hsl(0 0% 0% / 0.07);
-    --shadow-xl: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-xl:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 8px 10px -1px hsl(0 0% 0% / 0.07);
     --shadow-2xl: 0px 1px 50px 0px hsl(0 0% 0% / 0.18);
     --spacing: 0.24rem;
@@ -89,25 +93,27 @@
     --radius: 0.9rem;
     --shadow-2xs: 0px 1px 50px 0px hsl(0 0% 0% / 0.04);
     --shadow-xs: 0px 1px 50px 0px hsl(0 0% 0% / 0.04);
-    --shadow-sm: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-sm:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 1px 2px -1px hsl(0 0% 0% / 0.07);
-    --shadow: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 1px 2px -1px hsl(0 0% 0% / 0.07);
-    --shadow-md: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-md:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 2px 4px -1px hsl(0 0% 0% / 0.07);
-    --shadow-lg: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-lg:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 4px 6px -1px hsl(0 0% 0% / 0.07);
-    --shadow-xl: 0px 1px 50px 0px hsl(0 0% 0% / 0.07),
+    --shadow-xl:
+        0px 1px 50px 0px hsl(0 0% 0% / 0.07),
         0px 8px 10px -1px hsl(0 0% 0% / 0.07);
     --shadow-2xl: 0px 1px 50px 0px hsl(0 0% 0% / 0.18);
 }
 
 @theme inline {
-    --font-sans: "Geist Variable", sans-serif;
-    --font-synthesis: none;
-    --font-rendering: optimizeLegibility;
-    --font-webkit-font-smoothing: antialiased;
-    --font-moz-osx-font-smoothing: grayscale;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --color-background: var(--background);
     --color-foreground: var(--foreground);
     --color-card: var(--card);
@@ -162,5 +168,8 @@
     }
     body {
         @apply bg-background text-foreground;
+    }
+    html {
+        @apply font-sans;
     }
 }
