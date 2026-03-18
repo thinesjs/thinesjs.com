@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.14](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.13...release-v0.2.14) (2026-03-18)
+
+
+### Features
+
+* add admin easter egg link and robot check dialog ([0d3e3ab](https://github.com/thinesjs/thinesjs.com/commit/0d3e3ab755e56d4413d913c9eaed9156014b5300))
+* add secret farm easter egg page with pixel art ([57d3ffe](https://github.com/thinesjs/thinesjs.com/commit/57d3ffe07813cae80a3aa8987f5c59e79f1ab3ea))
+* remove shadow from components ([5230c90](https://github.com/thinesjs/thinesjs.com/commit/5230c9002e3fdefd736559cc6d9822573f54ba1f))
+* use emojies for elements ([0bf36bd](https://github.com/thinesjs/thinesjs.com/commit/0bf36bd604f5029a0bc8551e88383a30e5f1b03c))
+
+
+### Bug Fixes
+
+* restore index.css ([30071a9](https://github.com/thinesjs/thinesjs.com/commit/30071a9d45b8dd3a2e949b9f24c76e6933128ba9))
+* restore original theme and improve dialog semantics ([188d44d](https://github.com/thinesjs/thinesjs.com/commit/188d44d163852e8cb6bf1c0162757bab186850eb))
+
 ## [0.2.13](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.12...release-v0.2.13) (2026-03-18)
 
 
