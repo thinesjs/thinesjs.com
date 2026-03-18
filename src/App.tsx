@@ -121,16 +121,9 @@ function App() {
 
                 <section className="space-y-8">
                     <div className="flex justify-between items-center">
-                        <button
-                            onClick={() => setRobotDialogOpen(true)}
-                            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                            admin
-                        </button>
                         <div className="flex gap-4">
                             <Button
                                 variant="outline"
-                                className="rounded-lg"
                                 onClick={() =>
                                     window.open(
                                         "https://github.com/thinesjs",
@@ -142,7 +135,6 @@ function App() {
                             </Button>
                             <Button
                                 variant="outline"
-                                className="rounded-lg"
                                 onClick={() =>
                                     window.open(
                                         "https://www.linkedin.com/in/thines-jai-shankar-5780bb234/",
@@ -153,6 +145,12 @@ function App() {
                                 <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
                             </Button>
                         </div>
+                        <button
+                            onClick={() => setRobotDialogOpen(true)}
+                            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                            admin
+                        </button>
                     </div>
                 </section>
             </div>
@@ -169,7 +167,10 @@ function App() {
                 </DialogContent>
             </Dialog>
 
-            <AlertDialog open={robotDialogOpen} onOpenChange={setRobotDialogOpen}>
+            <AlertDialog
+                open={robotDialogOpen}
+                onOpenChange={setRobotDialogOpen}
+            >
                 <AlertDialogContent>
                     <AlertDialogHeader>
                         <AlertDialogTitle>Are you a robot?</AlertDialogTitle>
