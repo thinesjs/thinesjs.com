@@ -11,10 +11,23 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import { ModeToggle } from "./components/ui/mode-toggle";
+import { useNavigate } from "react-router-dom";
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import { toast } from "sonner";
 
 function App() {
     const [dialogOpen, setDialogOpen] = useState(false);
     const [dialogTitle, setDialogTitle] = useState("");
+    const [robotDialogOpen, setRobotDialogOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleOpenDialog = (title: string) => {
         setDialogTitle(title);
@@ -106,31 +119,39 @@ function App() {
                 </section>
 
                 <section className="space-y-8">
-                    <div className="flex gap-4">
-                        <Button
-                            variant="outline"
-                            className="rounded-lg"
-                            onClick={() =>
-                                window.open(
-                                    "https://github.com/thinesjs",
-                                    "_blank",
-                                )
-                            }
+                    <div className="flex justify-between items-center">
+                        <button
+                            onClick={() => setRobotDialogOpen(true)}
+                            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
                         >
-                            <Github className="mr-2 h-4 w-4" /> GitHub
-                        </Button>
-                        <Button
-                            variant="outline"
-                            className="rounded-lg"
-                            onClick={() =>
-                                window.open(
-                                    "https://www.linkedin.com/in/thines-jai-shankar-5780bb234/",
-                                    "_blank",
-                                )
-                            }
-                        >
-                            <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
-                        </Button>
+                            admin
+                        </button>
+                        <div className="flex gap-4">
+                            <Button
+                                variant="outline"
+                                className="rounded-lg"
+                                onClick={() =>
+                                    window.open(
+                                        "https://github.com/thinesjs",
+                                        "_blank",
+                                    )
+                                }
+                            >
+                                <Github className="mr-2 h-4 w-4" /> GitHub
+                            </Button>
+                            <Button
+                                variant="outline"
+                                className="rounded-lg"
+                                onClick={() =>
+                                    window.open(
+                                        "https://www.linkedin.com/in/thines-jai-shankar-5780bb234/",
+                                        "_blank",
+                                    )
+                                }
+                            >
+                                <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+                            </Button>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -146,6 +167,34 @@ function App() {
                     </DialogHeader>
                 </DialogContent>
             </Dialog>
+
+            <AlertDialog open={robotDialogOpen} onOpenChange={setRobotDialogOpen}>
+                <AlertDialogContent>
+                    <AlertDialogHeader>
+                        <AlertDialogTitle>Are you a robot?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                            Please confirm your identity to continue.
+                        </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                        <AlertDialogAction
+                            onClick={() => {
+                                toast("Access Denied.");
+                            }}
+                        >
+                            Yes
+                        </AlertDialogAction>
+                        <AlertDialogAction
+                            onClick={() => {
+                                setRobotDialogOpen(false);
+                                navigate("/admin");
+                            }}
+                        >
+                            No
+                        </AlertDialogAction>
+                    </AlertDialogFooter>
+                </AlertDialogContent>
+            </AlertDialog>
         </div>
     );
 }
