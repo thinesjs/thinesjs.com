@@ -26,11 +26,11 @@
 /* Horse hit area — transparent overlay for click target */
 .horse-container {
     position: absolute;
-    bottom: 42%;
+    bottom: 38%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90px;
-    height: 110px;
+    width: 100px;
+    height: 120px;
     cursor: pointer;
     z-index: 10;
     display: flex;
@@ -42,114 +42,97 @@
     width: 1px;
     height: 1px;
     pointer-events: none;
-    /* 13x17 horse silhouette at 1px offsets, scaled 6x */
+    /* Side-profile horse facing right — elongated head, angled neck, thin legs */
     box-shadow:
         /* ears */
-        3px -8px #8B6914,
-        7px -8px #8B6914,
-        /* head */
-        2px -7px #C4922A,
-        3px -7px #C4922A,
-        4px -7px #C4922A,
-        5px -7px #C4922A,
-        6px -7px #C4922A,
-        7px -7px #C4922A,
-        /* head row 2 */
-        2px -6px #C4922A,
-        3px -6px #C4922A,
-        4px -6px #C4922A,
-        5px -6px #C4922A,
-        6px -6px #C4922A,
-        7px -6px #C4922A,
+        9px -12px #8B6914,
+        11px -12px #8B6914,
+        /* forehead */
+        8px -11px #C4922A,
+        9px -11px #C4922A,
+        10px -11px #C4922A,
+        11px -11px #C4922A,
+        /* upper head */
+        8px -10px #C4922A,
+        9px -10px #C4922A,
+        10px -10px #C4922A,
+        11px -10px #C4922A,
         /* eye row */
-        2px -5px #C4922A,
-        3px -5px #C4922A,
-        4px -5px #1a1a1a,
-        5px -5px #C4922A,
+        8px -9px #C4922A,
+        9px -9px #1a1a1a,
+        10px -9px #C4922A,
+        11px -9px #C4922A,
+        /* lower face */
+        8px -8px #C4922A,
+        9px -8px #C4922A,
+        10px -8px #C4922A,
+        11px -8px #C4922A,
+        /* snout — narrower, gives horse shape */
+        9px -7px #B8872A,
+        10px -7px #B8872A,
+        11px -7px #B8872A,
+        /* upper neck */
+        7px -6px #C4922A,
+        8px -6px #C4922A,
+        9px -6px #C4922A,
+        10px -6px #C4922A,
+        /* mid neck + mane */
         6px -5px #C4922A,
         7px -5px #C4922A,
-        /* neck */
+        8px -5px #C4922A,
+        9px -5px #C4922A,
+        10px -5px #4a3010,
+        /* body row 1 + neck merge + mane */
+        1px -4px #C4922A,
+        2px -4px #C4922A,
+        3px -4px #C4922A,
         4px -4px #C4922A,
         5px -4px #C4922A,
-        6px -4px #8B6914,
-        /* mane */
-        7px -4px #4a3010,
-        8px -4px #4a3010,
-        /* neck row 2 */
-        3px -3px #C4922A,
-        4px -3px #C4922A,
-        5px -3px #C4922A,
+        6px -4px #C4922A,
+        7px -4px #C4922A,
+        8px -4px #C4922A,
+        9px -4px #4a3010,
+        /* body row 2 */
+        1px -3px #C4922A,
+        2px -3px #C4922A,
+        3px -3px #DBA83A,
+        4px -3px #DBA83A,
+        5px -3px #DBA83A,
         6px -3px #C4922A,
-        7px -3px #4a3010,
-        /* body row 1 */
-        0px -2px #C4922A,
+        7px -3px #C4922A,
+        8px -3px #C4922A,
+        /* body row 3 — belly highlight */
         1px -2px #C4922A,
-        2px -2px #C4922A,
-        3px -2px #C4922A,
-        4px -2px #C4922A,
-        5px -2px #C4922A,
+        2px -2px #DBA83A,
+        3px -2px #DBA83A,
+        4px -2px #DBA83A,
+        5px -2px #DBA83A,
         6px -2px #C4922A,
         7px -2px #C4922A,
         8px -2px #C4922A,
-        9px -2px #C4922A,
-        10px -2px #4a3010,
-        /* body row 2 */
-        0px -1px #C4922A,
+        /* body row 4 */
         1px -1px #C4922A,
         2px -1px #C4922A,
-        3px -1px #DBA83A,
-        4px -1px #DBA83A,
-        5px -1px #DBA83A,
-        6px -1px #DBA83A,
+        3px -1px #C4922A,
+        4px -1px #C4922A,
+        5px -1px #C4922A,
+        6px -1px #C4922A,
         7px -1px #C4922A,
-        8px -1px #C4922A,
-        9px -1px #C4922A,
-        /* body row 3 */
-        0px 0px #C4922A,
-        1px 0px #C4922A,
-        2px 0px #DBA83A,
-        3px 0px #DBA83A,
-        4px 0px #DBA83A,
-        5px 0px #DBA83A,
-        6px 0px #DBA83A,
-        7px 0px #C4922A,
-        8px 0px #C4922A,
-        9px 0px #C4922A,
-        /* body row 4 — belly */
-        0px 1px #C4922A,
-        1px 1px #C4922A,
-        2px 1px #DBA83A,
-        3px 1px #DBA83A,
-        4px 1px #DBA83A,
-        5px 1px #C4922A,
-        6px 1px #C4922A,
-        7px 1px #C4922A,
-        8px 1px #C4922A,
-        9px 1px #C4922A,
         /* tail */
+        0px -3px #4a3010,
+        -1px -2px #4a3010,
         -1px -1px #4a3010,
-        -1px 0px #4a3010,
-        -1px 1px #4a3010,
-        -2px 1px #4a3010,
-        -2px 2px #4a3010,
-        /* legs */
-        1px 2px #8B6914,
+        -2px 0px #4a3010,
+        /* front legs (thin, 1px wide) */
+        2px 0px #8B6914,
+        2px 1px #8B6914,
         2px 2px #8B6914,
-        7px 2px #8B6914,
-        8px 2px #8B6914,
-        1px 3px #8B6914,
-        2px 3px #8B6914,
-        7px 3px #8B6914,
-        8px 3px #8B6914,
-        1px 4px #8B6914,
-        2px 4px #8B6914,
-        7px 4px #8B6914,
-        8px 4px #8B6914,
-        /* hooves */
-        1px 5px #2a1a05,
-        2px 5px #2a1a05,
-        7px 5px #2a1a05,
-        8px 5px #2a1a05;
+        2px 3px #2a1a05,
+        /* back legs (thin, 1px wide) */
+        6px 0px #8B6914,
+        6px 1px #8B6914,
+        6px 2px #8B6914,
+        6px 3px #2a1a05;
     transform: scale(6);
     animation: horse-bob 2s ease-in-out infinite;
 }
