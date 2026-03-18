@@ -1,0 +1,240 @@
+/* Farm scene */
+.farm-scene {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background: linear-gradient(to bottom, #0a2a38 0%, #1a3a48 60%, #2d5a1e 60%, #1e4a12 100%);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+/* Ground area (clickable for planting) */
+.farm-ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+}
+
+/*
+ * Pixel art technique: 1px element with 0-blur, 0-spread box-shadows at 1px offsets,
+ * then scaled up with transform: scale(). This produces crisp pixel art.
+ */
+
+/* Horse hit area — transparent overlay for click target */
+.horse-container {
+    position: absolute;
+    bottom: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 110px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pixel-horse {
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+    /* 13x17 horse silhouette at 1px offsets, scaled 6x */
+    box-shadow:
+        /* ears */
+        3px -8px #8B6914,
+        7px -8px #8B6914,
+        /* head */
+        2px -7px #C4922A,
+        3px -7px #C4922A,
+        4px -7px #C4922A,
+        5px -7px #C4922A,
+        6px -7px #C4922A,
+        7px -7px #C4922A,
+        /* head row 2 */
+        2px -6px #C4922A,
+        3px -6px #C4922A,
+        4px -6px #C4922A,
+        5px -6px #C4922A,
+        6px -6px #C4922A,
+        7px -6px #C4922A,
+        /* eye row */
+        2px -5px #C4922A,
+        3px -5px #C4922A,
+        4px -5px #1a1a1a,
+        5px -5px #C4922A,
+        6px -5px #C4922A,
+        7px -5px #C4922A,
+        /* neck */
+        4px -4px #C4922A,
+        5px -4px #C4922A,
+        6px -4px #8B6914,
+        /* mane */
+        7px -4px #4a3010,
+        8px -4px #4a3010,
+        /* neck row 2 */
+        3px -3px #C4922A,
+        4px -3px #C4922A,
+        5px -3px #C4922A,
+        6px -3px #C4922A,
+        7px -3px #4a3010,
+        /* body row 1 */
+        0px -2px #C4922A,
+        1px -2px #C4922A,
+        2px -2px #C4922A,
+        3px -2px #C4922A,
+        4px -2px #C4922A,
+        5px -2px #C4922A,
+        6px -2px #C4922A,
+        7px -2px #C4922A,
+        8px -2px #C4922A,
+        9px -2px #C4922A,
+        10px -2px #4a3010,
+        /* body row 2 */
+        0px -1px #C4922A,
+        1px -1px #C4922A,
+        2px -1px #C4922A,
+        3px -1px #DBA83A,
+        4px -1px #DBA83A,
+        5px -1px #DBA83A,
+        6px -1px #DBA83A,
+        7px -1px #C4922A,
+        8px -1px #C4922A,
+        9px -1px #C4922A,
+        /* body row 3 */
+        0px 0px #C4922A,
+        1px 0px #C4922A,
+        2px 0px #DBA83A,
+        3px 0px #DBA83A,
+        4px 0px #DBA83A,
+        5px 0px #DBA83A,
+        6px 0px #DBA83A,
+        7px 0px #C4922A,
+        8px 0px #C4922A,
+        9px 0px #C4922A,
+        /* body row 4 — belly */
+        0px 1px #C4922A,
+        1px 1px #C4922A,
+        2px 1px #DBA83A,
+        3px 1px #DBA83A,
+        4px 1px #DBA83A,
+        5px 1px #C4922A,
+        6px 1px #C4922A,
+        7px 1px #C4922A,
+        8px 1px #C4922A,
+        9px 1px #C4922A,
+        /* tail */
+        -1px -1px #4a3010,
+        -1px 0px #4a3010,
+        -1px 1px #4a3010,
+        -2px 1px #4a3010,
+        -2px 2px #4a3010,
+        /* legs */
+        1px 2px #8B6914,
+        2px 2px #8B6914,
+        7px 2px #8B6914,
+        8px 2px #8B6914,
+        1px 3px #8B6914,
+        2px 3px #8B6914,
+        7px 3px #8B6914,
+        8px 3px #8B6914,
+        1px 4px #8B6914,
+        2px 4px #8B6914,
+        7px 4px #8B6914,
+        8px 4px #8B6914,
+        /* hooves */
+        1px 5px #2a1a05,
+        2px 5px #2a1a05,
+        7px 5px #2a1a05,
+        8px 5px #2a1a05;
+    transform: scale(6);
+    animation: horse-bob 2s ease-in-out infinite;
+}
+
+.horse-container:hover .pixel-horse {
+    filter: brightness(1.2);
+}
+
+.horse-container.petted .pixel-horse {
+    animation: horse-jump 0.4s ease-out;
+}
+
+/* Pixel art tree */
+.pixel-tree {
+    position: absolute;
+    bottom: 40%;
+    width: 1px;
+    height: 1px;
+    animation: tree-grow 0.6s ease-out forwards;
+    box-shadow:
+        /* canopy top */
+        1px -5px #2d7a1e,
+        2px -5px #3a9a28,
+        3px -5px #2d7a1e,
+        /* canopy row 2 */
+        0px -4px #2d7a1e,
+        1px -4px #3a9a28,
+        2px -4px #4aaa38,
+        3px -4px #3a9a28,
+        4px -4px #2d7a1e,
+        /* canopy row 3 */
+        0px -3px #3a9a28,
+        1px -3px #4aaa38,
+        2px -3px #3a9a28,
+        3px -3px #4aaa38,
+        4px -3px #3a9a28,
+        /* canopy row 4 */
+        1px -2px #2d7a1e,
+        2px -2px #3a9a28,
+        3px -2px #2d7a1e,
+        /* trunk */
+        2px -1px #6b3a1f,
+        2px 0px #6b3a1f,
+        2px 1px #5a2e18;
+    transform: scale(6);
+    z-index: 5;
+}
+
+/* Animations */
+@keyframes horse-bob {
+    0%, 100% { transform: scale(6) translateY(0); }
+    50% { transform: scale(6) translateY(-1px); }
+}
+
+@keyframes horse-jump {
+    0% { transform: scale(6) translateY(0); }
+    30% { transform: scale(7) translateY(-4px); filter: brightness(1.4); }
+    100% { transform: scale(6) translateY(0); }
+}
+
+@keyframes tree-grow {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(7); opacity: 1; }
+    100% { transform: scale(6); opacity: 1; }
+}
+
+/* Stars in the sky */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Responsive scaling */
+@media (max-width: 480px) {
+    .farm-scene {
+        width: 300px;
+        height: 225px;
+    }
+}
