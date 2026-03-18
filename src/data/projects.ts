@@ -9,7 +9,7 @@ export const projects: Project[] = [
         links: [
             {
                 text: "Visit TransitRouter",
-                url: "https://transitrouter.my",
+                url: "https://transitrouter.my?utm_source=thinesjs.com&utm_medium=website",
                 icon: ArrowUpRightIcon,
             },
         ],
@@ -31,7 +31,7 @@ export const projects: Project[] = [
             },
             {
                 text: "Visit myPlate on the web",
-                url: "https://myplate.thinesjs.app",
+                url: "https://myplate.thinesjs.app?utm_source=thinesjs.com&utm_medium=website",
                 icon: ArrowUpRightIcon,
             },
         ],
