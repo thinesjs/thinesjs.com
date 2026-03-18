@@ -15,6 +15,7 @@ const STARS = Array.from({ length: 15 }, (_, i) => ({
 interface Tree {
     id: number;
     x: number;
+    y: number;
 }
 
 export default function Admin() {
@@ -38,9 +39,11 @@ export default function Admin() {
             }
             const rect = e.currentTarget.getBoundingClientRect();
             const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
 
-            setTrees((prev) => [...prev, { id: Date.now(), x: xPercent }]);
+            setTrees((prev) => [...prev, { id: Date.now(), x: xPercent, y: yPercent }]);
         },
         [trees.length]
     );
@@ -74,7 +77,7 @@ export default function Admin() {
                         ))}
 
                         <div
-                            className={`horse-container${isPetted ? " petted" : ""}`}
+                            className={`horse-emoji${isPetted ? " petted" : ""}`}
                             onClick={handlePetHorse}
                             role="button"
                             tabIndex={0}
@@ -86,16 +89,18 @@ export default function Admin() {
                                 }
                             }}
                         >
-                            <div className="pixel-horse" />
+                            🐎
                         </div>
 
                         <div className="farm-ground" onClick={handlePlantTree}>
                             {trees.map((tree) => (
-                                <div
+                                <span
                                     key={tree.id}
-                                    className="pixel-tree"
-                                    style={{ left: `${tree.x}%` }}
-                                />
+                                    className="tree-emoji"
+                                    style={{ left: `${tree.x}%`, top: `${tree.y}%` }}
+                                >
+                                    🌳
+                                </span>
                             ))}
                         </div>
                     </div>
