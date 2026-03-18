@@ -31,8 +31,11 @@ function App() {
 
                 <section>
                     <p className="text-muted-foreground leading-relaxed">
-                        hi, im thines, on a normal day, i prompt ai to write
-                        code and i commit them on behalf of me. (tehc 101)
+                        i write software. talk to LLMs, build stuff, and
+                        sometimes write code for LLMs to work in a particular
+                        way.
+                        <br />
+                        and i like farms with trees and horses.
                     </p>
                 </section>
 
@@ -41,8 +44,8 @@ function App() {
                         well if you are interested...
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">
-                        check these out if it works, if it doesn't, blame claude
-                        and maybe let me know?
+                        check these out, play with them, and let me know what
+                        you think.
                     </p>
                     <div className="space-y-6">
                         {projects.map((project, index) => {
