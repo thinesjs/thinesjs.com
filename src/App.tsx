@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import {
     AlertDialog,
     AlertDialogAction,
+    AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
     AlertDialogFooter,
@@ -177,13 +178,13 @@ function App() {
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                        <AlertDialogAction
+                        <AlertDialogCancel
                             onClick={() => {
                                 toast("Access Denied.");
                             }}
                         >
                             Yes
-                        </AlertDialogAction>
+                        </AlertDialogCancel>
                         <AlertDialogAction
                             onClick={() => {
                                 setRobotDialogOpen(false);
