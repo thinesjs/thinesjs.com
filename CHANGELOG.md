@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.13](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.12...release-v0.2.13) (2026-03-18)
+
+
+### Features
+
+* changes to copywriting ([deeea58](https://github.com/thinesjs/thinesjs.com/commit/deeea58fa14e4e1daee7903ec96a9e7317fc320d))
+* **projects:** add transitrouter.my ([0c3e362](https://github.com/thinesjs/thinesjs.com/commit/0c3e3628a09fa5afd0cb7d524fa28b27956c13c2))
+* update urls to include utm refer ([fa22892](https://github.com/thinesjs/thinesjs.com/commit/fa22892dfb4bdb75176ffec812f6fa3739740597))
+
 ## [0.2.12](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.11...release-v0.2.12) (2026-03-15)
 
 
