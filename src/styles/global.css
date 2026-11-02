@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 /* @import "@fontsource-variable/lora"; */
 
 @custom-variant dark (&:is(.dark *));
@@ -24,20 +22,7 @@
     --border: oklch(0.92 0.004 286.32);
     --input: oklch(0.92 0.004 286.32);
     --ring: oklch(0.705 0.015 286.067);
-    --chart-1: oklch(0.879 0.169 91.605);
-    --chart-2: oklch(0.769 0.188 70.08);
-    --chart-3: oklch(0.666 0.179 58.318);
-    --chart-4: oklch(0.555 0.163 48.998);
-    --chart-5: oklch(0.473 0.137 46.201);
     --radius: 0;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.141 0.005 285.823);
-    --sidebar-primary: oklch(0.21 0.006 285.885);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.967 0.001 286.375);
-    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-    --sidebar-border: oklch(0.92 0.004 286.32);
-    --sidebar-ring: oklch(0.705 0.015 286.067);
 }
 
 .dark {
@@ -59,36 +44,10 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.552 0.016 285.938);
-    --chart-1: oklch(0.879 0.169 91.605);
-    --chart-2: oklch(0.769 0.188 70.08);
-    --chart-3: oklch(0.666 0.179 58.318);
-    --chart-4: oklch(0.555 0.163 48.998);
-    --chart-5: oklch(0.473 0.137 46.201);
-    --sidebar: oklch(0.21 0.006 285.885);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.274 0.006 286.033);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
 @theme inline {
     /* --font-serif: "Lora Variable", serif; */
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
     --color-ring: var(--ring);
     --color-input: var(--input);
     --color-border: var(--border);
@@ -127,3 +86,71 @@
         @apply font-serif;
     } */
 }
+
+/* Unlayered deliberately. Native <dialog> centres via the UA stylesheet's
+   margin:auto, and two Tailwind rules would otherwise clobber it: Preflight
+   resets margin on * (@layer base), and a parent's space-y-* sets
+   margin-block on non-last children (@layer utilities, which outranks
+   @layer components). Unlayered CSS outranks both.
+   This also means any future style on <dialog> touching margin, opacity,
+   transform, or transition must be added here rather than as a utility
+   class on the element — an unlayered rule outranks @layer utilities with
+   no !important, so a conflicting utility class would silently lose with
+   nothing in devtools to explain why. Selector is a bare `dialog` tag, not
+   #contact-dialog, so a future second dialog on the page inherits this too. */
+dialog {
+    margin: auto;
+    opacity: 0;
+    transform: scale(0.95);
+    transition:
+        opacity 200ms,
+        transform 200ms,
+        overlay 200ms allow-discrete,
+        display 200ms allow-discrete;
+}
+
+dialog[open] {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@starting-style {
+    dialog[open] {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+dialog::backdrop {
+    background: rgb(0 0 0 / 0.5);
+    opacity: 0;
+    transition:
+        opacity 200ms,
+        overlay 200ms allow-discrete,
+        display 200ms allow-discrete;
+}
+
+dialog[open]::backdrop {
+    opacity: 1;
+}
+
+@starting-style {
+    dialog[open]::backdrop {
+        opacity: 0;
+    }
+}
+
+/* Native <dialog> does not lock background scroll the way Radix Dialog did
+   (react-remove-scroll); restore that here. Unlayered for the same reason
+   and with the same precedence trap as the `dialog` rule above: a future
+   `overflow-*` utility applied to <body> would silently lose to this. No
+   classes on <body> today, so nothing conflicts yet. */
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+/* Scrollbar-width compensation lives in ContactDialog.astro's inline script:
+   CSS cannot tell whether the page currently has a scrollbar, and an
+   unconditional scrollbar-gutter pushes centred content half a scrollbar
+   off centre on pages too short to scroll. */
+

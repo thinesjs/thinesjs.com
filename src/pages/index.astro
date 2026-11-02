@@ -1,0 +1,118 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import ProjectList from "../components/ProjectList.astro";
+import Icon from "../components/Icon.astro";
+import ContactDialog from "../components/ContactDialog.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>thines jai shankar | thinesjs</title>
+        <meta name="description" content="i build cool stuff on the web for the web" />
+        <meta name="keywords" content="thines jai shankar, thinesjs, jai shankar, thines" />
+        <meta name="author" content="thines jai shankar" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="bingbot" content="index, follow" />
+        <meta name="yandexbot" content="index, follow" />
+        <meta property="og:title" content="thines jai shankar | thinesjs" />
+        <meta property="og:description" content="i build cool stuff on the web for the web" />
+        <meta property="og:image" content="https://thinesjs.com/og.png" />
+        <meta property="og:url" content="https://thinesjs.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="thines jai shankar | thinesjs" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="thines jai shankar | thinesjs" />
+        <meta name="twitter:description" content="i build cool stuff on the web for the web" />
+        <meta name="twitter:image" content="https://thinesjs.com/twitter.png" />
+        <meta name="twitter:url" content="https://thinesjs.com" />
+        <link rel="canonical" href="https://thinesjs.com/" />
+        <script type="application/ld+json" is:inline set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "thines jai shankar",
+            url: "https://thinesjs.com",
+            sameAs: [
+                "https://www.linkedin.com/in/thines-jai-shankar-5780bb234/",
+                "https://github.com/thinesjs"
+            ],
+            jobTitle: "Full-Stack Software Engineer"
+        })} />
+        <script is:inline>
+            (() => {
+                const KEY = "app-ui-theme";
+                let t = null;
+                try {
+                    t = localStorage.getItem(KEY);
+                    if (t === "system") {
+                        t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                        localStorage.setItem(KEY, t);
+                    }
+                } catch {}
+                if (t !== "light") t = "dark";
+                document.documentElement.classList.toggle("dark", t === "dark");
+            })();
+        </script>
+    </head>
+    <body>
+        <div class="min-h-screen bg-background text-foreground p-8 md:p-16">
+            <div class="mx-auto max-w-3xl space-y-10">
+                <Header />
+
+                <section>
+                    <p class="text-muted-foreground leading-relaxed">
+                        i write software. talk to LLMs, build stuff, and
+                        sometimes write code for LLMs to work in a particular
+                        way.
+                        <br />
+                        and i like farms with trees and horses.
+                    </p>
+                </section>
+
+                <section class="space-y-8">
+                    <h2 class="text-xl font-medium">well if you are interested...</h2>
+                    <p class="text-muted-foreground leading-relaxed">
+                        check these out, play with them, and let me know what you think.
+                    </p>
+                    <ProjectList />
+                </section>
+
+                <section class="space-y-8">
+                    <h2 class="text-xl font-medium">if you'd like to reach out...</h2>
+                    <div class="space-y-6">
+                        <p class="text-muted-foreground">
+                            need help, have questions or something isn't right?
+                        </p>
+                        <ContactDialog />
+                    </div>
+                </section>
+
+                <section class="space-y-8">
+                    <div class="flex gap-4">
+                        <a
+                            href="https://github.com/thinesjs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group/button inline-flex h-9 shrink-0 items-center justify-center gap-1.5 px-2.5 rounded-md border border-border bg-background bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px dark:border-input dark:bg-input/30 dark:hover:bg-input/50 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+                        >
+                            <Icon name="github" class="mr-2 h-4 w-4" /> GitHub
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/thines-jai-shankar-5780bb234/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="group/button inline-flex h-9 shrink-0 items-center justify-center gap-1.5 px-2.5 rounded-md border border-border bg-background bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none hover:bg-muted hover:text-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px dark:border-input dark:bg-input/30 dark:hover:bg-input/50 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+                        >
+                            <Icon name="linkedin" class="mr-2 h-4 w-4" /> LinkedIn
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

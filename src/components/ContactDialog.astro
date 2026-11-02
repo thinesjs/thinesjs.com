@@ -1,0 +1,66 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<button
+    id="contact-open"
+    type="button"
+    class="group/button inline-flex h-9 shrink-0 items-center justify-center gap-1.5 px-0 rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap text-blue-500 underline-offset-4 transition-all outline-none select-none hover:text-blue-400 hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px [&_svg]:pointer-events-none [&_svg]:shrink-0"
+>
+    <Icon name="message-square" class="mr-2 h-4 w-4" /> Contact Me
+</button>
+
+<dialog
+    id="contact-dialog"
+    aria-labelledby="contact-title"
+    class="bg-background text-foreground w-full max-w-[calc(100%-2rem)] open:grid gap-4 rounded-3xl border p-6 shadow-lg sm:max-w-lg"
+>
+    <div class="flex flex-col gap-2 text-center sm:text-left">
+        <h2 id="contact-title" class="text-lg leading-none font-semibold">
+            Contact Information
+        </h2>
+        <p class="text-muted-foreground text-sm">
+            For any questions or concerns, please contact me via email at
+            hey@thinesjs.com
+        </p>
+    </div>
+    <button
+        id="contact-close"
+        type="button"
+        class="absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-ring focus:ring-offset-2 ring-offset-background focus:outline-hidden [&_svg]:pointer-events-none [&_svg]:shrink-0"
+    >
+        <Icon name="x" class="h-4 w-4" />
+        <span class="sr-only">Close</span>
+    </button>
+</dialog>
+
+<script is:inline>
+    (() => {
+        const dlg = document.getElementById("contact-dialog");
+        // Scrollbar-width compensation, as Radix's react-remove-scroll did:
+        // the scroll lock hides the scrollbar, so pad <body> by its measured
+        // width to stop the page shifting. Zero under overlay scrollbars and
+        // on pages too short to scroll, so it only ever applies when needed.
+        document.getElementById("contact-open").addEventListener("click", () => {
+            const sb = window.innerWidth - document.documentElement.clientWidth;
+            if (sb > 0) document.body.style.paddingRight = sb + "px";
+            dlg.showModal();
+        });
+        // "close" fires however the dialog closes: button, backdrop or Esc.
+        dlg.addEventListener("close", () => {
+            document.body.style.paddingRight = "";
+        });
+        document
+            .getElementById("contact-close")
+            .addEventListener("click", () => dlg.close());
+        dlg.addEventListener("click", (e) => {
+            const r = dlg.getBoundingClientRect();
+            const inside =
+                r.top <= e.clientY &&
+                e.clientY <= r.top + r.height &&
+                r.left <= e.clientX &&
+                e.clientX <= r.left + r.width;
+            if (!inside) dlg.close();
+        });
+    })();
+</script>

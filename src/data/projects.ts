@@ -1,5 +1,13 @@
-import { Project } from "@/interfaces/projects.interface";
-import { ArrowUpRightIcon } from "lucide-react";
+export interface ProjectLink {
+    text: string;
+    url: string;
+}
+
+export interface Project {
+    title: string;
+    description: string;
+    links: ProjectLink[];
+}
 
 export const projects: Project[] = [
     {
@@ -10,7 +18,6 @@ export const projects: Project[] = [
             {
                 text: "Visit TransitRouter",
                 url: "https://transitrouter.my?utm_source=thinesjs.com&utm_medium=website",
-                icon: ArrowUpRightIcon,
             },
         ],
     },
@@ -22,17 +29,10 @@ export const projects: Project[] = [
             {
                 text: "Get myPlate for iOS",
                 url: "https://apps.apple.com/us/app/myplate-malaysia-car-plates/id6741453266",
-                icon: ArrowUpRightIcon,
             },
             {
                 text: "Get myPlate for Android",
                 url: "https://play.google.com/store/apps/details?id=com.thinesjs.myplate",
-                icon: ArrowUpRightIcon,
-            },
-            {
-                text: "Visit myPlate on the web",
-                url: "https://myplate.thinesjs.app?utm_source=thinesjs.com&utm_medium=website",
-                icon: ArrowUpRightIcon,
             },
         ],
     },

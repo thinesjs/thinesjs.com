@@ -1,0 +1,26 @@
+---
+import Icon from "./Icon.astro";
+import { projects } from "../data/projects";
+---
+
+<div class="space-y-6">
+    {
+        projects.map((project) => (
+            <div class="space-y-1">
+                <h3 class="font-medium">{project.title}</h3>
+                <p class="text-muted-foreground">{project.description}</p>
+                {project.links.map((link) => (
+                    <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="group/button inline-flex h-9 shrink-0 items-center justify-center gap-1.5 px-0 rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap text-blue-500 underline-offset-4 transition-all outline-none select-none hover:text-blue-400 hover:underline focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px [&_svg]:pointer-events-none [&_svg]:shrink-0"
+                    >
+                        <Icon name="arrow-up-right" class="mr-2 h-4 w-4" />
+                        {link.text}
+                    </a>
+                ))}
+            </div>
+        ))
+    }
+</div>

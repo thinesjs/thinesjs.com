@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.astro
 *.local
 
 # editor directories and files
@@ -28,3 +29,5 @@ dist-ssr
 .env.*
 
 .serverless
+
+.playwright-mcp
