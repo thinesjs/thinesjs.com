@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.15](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.14...release-v0.2.15) (2026-11-09)
+
+
+### Features
+
+* migrate site from react/vite to static astro ([26964dc](https://github.com/thinesjs/thinesjs.com/commit/26964dc746d5a09e6668952d6908854f7d4744c3))
+
 ## [0.2.14](https://github.com/thinesjs/thinesjs.com/compare/release-v0.2.13...release-v0.2.14) (2026-03-18)
 
 
